@@ -1,8 +1,8 @@
 version: '3.3'
 services:
   snake:
-    image: 'dchirwa/chat-app'
-    container_name: chatapp
+    image: 'dchirwa/chat-app:latest'
+    container_name: chatapp2
     environment:
       - PORT=3000
     ports:
