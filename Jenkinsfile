@@ -8,7 +8,14 @@ node('appserver') {
     stage('Build and Tag') {
         app = docker.build('dchirwa/chat-app')
     }
- 
+    stage('SCA-SAST-SNYK-TEST') 
+    {
+        snykSecurity(
+            snykInstallation: 'Snyk',
+            snykTokenId: 'Snykid',
+            severity: 'critical'
+        )
+    }
     stage('Post to DockerHub') {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_credentials') {
             app.push('latest')
