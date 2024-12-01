@@ -6,7 +6,7 @@ node('appserver') {
     }
  
     stage('Build and Tag') {
-        app = docker.build('dchirwa/chat-app:latest')
+        app = docker.build('dchirwa/chat-app')
     }
  
     stage('Post to DockerHub') {
