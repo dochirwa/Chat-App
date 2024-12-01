@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  chatapp:  
+    image: 'dchirwa/chat-app:latest'
+    environment: 
+      - "PORT:3700" 
+    ports:
+      - "80:3700"
+    volumes:
+      - ./:/app
