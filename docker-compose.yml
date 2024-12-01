@@ -1,10 +1,12 @@
 version: '3.3'
 services:
-  chatapp:  
+  snake:
     image: 'dchirwa/chat-app:latest'
-    environment: 
-      - "PORT:3700" 
+    container_name: qr_app2
+    environment:
+      - PORT=3000
     ports:
-      - "80:3700"
+      - "80:3000"
     volumes:
       - ./:/app
+    restart: always
